@@ -11,14 +11,7 @@ WORKDIR /app
 COPY logo.png /app/
 COPY DASHBOARD.py /app/
 
-# Déplacement des fichiers de configuration de streeamlit
-# dans un répertoire .streamlit
-RUN mkdir ~/.streamlit
-COPY config.toml ~/.streamlit/config.toml
-COPY credentials.toml ~/.streamlit/credentials.toml
-
 EXPOSE 80
-EXPOSE 8501
 
 # Lance streamlit
 ENTRYPOINT ["streamlit", "run"]
