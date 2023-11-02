@@ -14,11 +14,14 @@ services:
     image: dashboard_docker
     container_name: projet7dashboard
     restart: unless-stopped
-    ports:
-      - 80:80  # Mappe le port 80 du conteneur au port 80 de l'hôte
+    environment:
+      - STREAMLIT_SERVER_PORT=80
     networks:
       - projet7-net  # Utilise le réseau "projet7-net" pour la communication
+      - services-net
 
 networks:
+  services-net:
+    external: true
   projet7-net:
     external: false
