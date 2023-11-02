@@ -17,7 +17,7 @@ import streamlit.components.v1 as components
 
 # Définition de l'URL de l'API
 # URL_API = "http://localhost:5001/"  # Utilisation en local
-URL_API = "http://projet7API:5001/"  # Utilisation en production
+URL_API = "http://projet7api:5001/"  # Utilisation en production
 
 
 def main():

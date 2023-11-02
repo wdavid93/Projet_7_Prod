@@ -8,8 +8,12 @@ FROM monappregistrywd.azurecr.io/python_docker
 # Répertoire de travail
 WORKDIR /app
 
+COPY API.py /app/
+COPY application_test.zip /app/
+COPY application_train.zip /app/
+
 # Déclaration des ports d'entrées à l'app depuis l'extérieur du container
-EXPOSE 5000
+EXPOSE 5001
 
 # Lance Flask
 CMD ["python", "API.py"]

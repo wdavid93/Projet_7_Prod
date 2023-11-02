@@ -6,10 +6,6 @@ services:
     image: monappregistrywd.azurecr.io/api_docker
     container_name: projet7api
     restart: unless-stopped
-    ports:
-      - 5001:5001  # Mappe le port 5000 du conteneur au port 5000 de l'hôte
-    # volumes:
-    #   - ./api_docker:/app  # Montage du répertoire local "api_docker" dans le conteneur sous "/app"
     networks:
       - projet7-net  # Utilise le réseau "projet7-net" pour la communication
 
@@ -19,10 +15,7 @@ services:
     container_name: projet7dashboard
     restart: unless-stopped
     ports:
-      - 80:80  # Mappe le port 8501 du conteneur au port 8501 de l'hôte
-    # volumes:
-    #   - ./dashboard_docker:/app  # Montage du répertoire local "dashboard_docker" dans le conteneur sous "/app"
-    #   - ./dashboard_docker/config.toml:/root/.streamlit/config.toml
+      - 80:80  # Mappe le port 80 du conteneur au port 80 de l'hôte
     networks:
       - projet7-net  # Utilise le réseau "projet7-net" pour la communication
 
