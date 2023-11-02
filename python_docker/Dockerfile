@@ -3,7 +3,8 @@
 # OS Support also exists for jessie & stretch (slim and full).
 # See https://hub.docker.com/r/library/python/ for all supported Python
 # tags from Docker Hub.
-FROM python:3.7.6-slim-buster
+# FROM python:3.7.6-slim-buster
+FROM python:3.9-slim
 
 RUN mkdir /app
 COPY requirements.txt /app/

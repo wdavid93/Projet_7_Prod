@@ -24,3 +24,7 @@ disableWidgetStateDuplicationWarning = false
 
 # Default: true
 showWarningOnDirectExecution = true
+
+# The port where the server will listen for client and browser connections.
+# Default: 8501
+port = 80

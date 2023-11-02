@@ -28,7 +28,6 @@ joblib
 jsonschema
 kiwisolver
 MarkupSafe
-mlflow
 matplotlib
 more-itertools
 numpy

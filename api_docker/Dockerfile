@@ -3,7 +3,7 @@
 # OS Support also exists for jessie & stretch (slim and full).
 # See https://hub.docker.com/r/library/python/ for all supported Python
 # tags from Docker Hub.
-FROM python_docker
+FROM monappregistrywd.azurecr.io/python_docker
 
 # Répertoire de travail
 WORKDIR /app
