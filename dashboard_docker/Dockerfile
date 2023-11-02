@@ -3,7 +3,7 @@
 # OS Support also exists for jessie & stretch (slim and full).
 # See https://hub.docker.com/r/library/python/ for all supported Python
 # tags from Docker Hub.
-FROM monappregistrywd.azurecr.io/python_docker
+FROM python_docker
 
 # Répertoire de travail
 WORKDIR /app
@@ -18,7 +18,6 @@ COPY config.toml ~/.streamlit/config.toml
 COPY credentials.toml ~/.streamlit/credentials.toml
 
 EXPOSE 80
-EXPOSE 8501
 
 # Lance streamlit
 ENTRYPOINT ["streamlit", "run"]

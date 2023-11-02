@@ -2,16 +2,16 @@ version: "3"
 
 services:
   # Service pour l'API de Projet 7
-  projet7API:
-    image: monappregistrywd.azurecr.io/api_docker
+  projet7api:
+    image: api_docker
     container_name: projet7api
     restart: unless-stopped
     networks:
       - projet7-net  # Utilise le réseau "projet7-net" pour la communication
 
   # Service pour le tableau de bord de Projet 7
-  projet7Dashboard:
-    image: monappregistrywd.azurecr.io/dashboard_docker
+  projet7dashboard:
+    image: dashboard_docker
     container_name: projet7dashboard
     restart: unless-stopped
     ports:
