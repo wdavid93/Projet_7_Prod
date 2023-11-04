@@ -9,6 +9,7 @@ FROM python_docker
 WORKDIR /app
 
 COPY API.py /app/
+COPY xgb.json /app/
 COPY application_test.zip /app/
 COPY application_train.zip /app/
 
