@@ -87,7 +87,11 @@ def init_model():
     # On entraîne le modèle et on le transforme en
     # variable globale pour la fonction predict
     global clf_xgb
-    clf_xgb = entrainement_XGBoost(X, y)
+    # clf_xgb = entrainement_XGBoost(X, y)
+    
+    clf_xgb = xgb.Booster()
+    clf_xgb.load_model("xgb.json")
+
     print("Training xgboost done")
 
     global knn
