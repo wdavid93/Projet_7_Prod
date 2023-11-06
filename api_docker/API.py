@@ -87,16 +87,25 @@ def init_model():
     # On entraîne le modèle et on le transforme en
     # variable globale pour la fonction predict
     global clf_xgb
-    # clf_xgb = entrainement_XGBoost(X, y)
+    clf_xgb = entrainement_XGBoost(X, y)
     
-    clf_xgb = xgb.Booster()
-    clf_xgb.load_model("xgb.json")
+    # clf_xgb = xgb.Booster()
+    # clf_xgb.load_model("xgb.json")
 
     print("Training xgboost done")
 
     global knn
     knn = entrainement_knn(df_train)
     print("Training knn done")
+
+    # clf_xgb.save_model("xgb.json")
+
+    # from joblib import dump, load
+    # dump(knn, 'knn.joblib') 
+
+    # import pickle
+    # filename = 'knn.pickle'
+    # pickle.dump(knn, open(filename, 'wb'))
 
     # # Configuration de la journalisation
     # global log_dir
