@@ -1,3 +1,4 @@
+az login
 az acr login --name monappregistrywd
 
 az acr build --registry monappregistrywd --resource-group appgroup --image python_docker ./python_docker
