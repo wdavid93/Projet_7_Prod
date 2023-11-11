@@ -14,6 +14,7 @@ decorator
 docutils
 entrypoints
 enum-compat
+evidently
 Flask
 future
 idna
@@ -34,6 +35,7 @@ numpy
 pandas
 pathtools
 Pillow
+plotly
 protobuf
 pyparsing
 pyrsistent

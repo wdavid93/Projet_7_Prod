@@ -11,6 +11,7 @@ import logging
 
 # import ipython
 import os
+import sys
 from sklearn.preprocessing import LabelEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import MinMaxScaler
@@ -35,11 +36,20 @@ app = Flask(__name__)
 # Flask route decorators map / and /hello to the hello function.
 # To add other resources, create functions that generate the page contents
 # and add decorators to define the appropriate resource locators for them.
-
+# current_file_directory = os.path.dirname(__file__)
+# print("Dans api.py, le current_file_directory : " , current_file_directory ) 
+# sys.path.insert(0, current_file_directory)
 # On charge les données
-data_train = pd.read_csv("application_train.zip")
-data_test = pd.read_csv("application_test.zip")
+# print("Lecture des Fichiers Zip")
 
+# data_train = pd.read_csv("application_train.zip")
+# data_test = pd.read_csv("application_test.zip")
+
+# data_train = pd.read_csv("C:\\Users\\Zbook\\OpenClassRoom\\Projet_7_Prod\\api_docker\\app_train.csv")
+# data_test = pd.read_csv("C:\\Users\\Zbook\\OpenClassRoom\\Projet_7_Prod\\api_docker\\app_test.csv")
+data_train = pd.read_csv("app_train.csv")
+data_test = pd.read_csv("app_test.csv")
+# print(data_test.shape)
 # On crée deux variables en attente qui deviendront
 # des variables globales après l'initialisation de l'API.
 # Ces variables sont utilisées dans plusieurs fonctions de l'API.
@@ -49,8 +59,9 @@ model = None
 
 # On crée la liste des ID clients qui nous servira dans l'API
 id_client = data_test["SK_ID_CURR"][:50].values
+# print("id_client : ", id_client)
 id_client = pd.DataFrame(id_client)
-
+print("Fonction init_model")
 # routes
 # Entraînement du modèle
 @app.route("/init_model", methods=["GET"])
@@ -143,7 +154,6 @@ def init_model():
         
 #         return jsonify(["Initialisation terminée."])
 
-
 @app.route("/shap_xgb_x", methods=["GET"])
 def show_shap_xgb_x():
     return X.tolist()
@@ -167,10 +177,13 @@ def show_shap_xgb_values():
 def show_shap_xgb_df():
     return feature_train.drop(columns=["TARGET"]).to_json()
 
+@app.route("/load_df_test", methods=["GET"])
+def load_df_test():
+    return feature_test.drop(columns=["TARGET"]).to_json()
+    
 # Chargement des données pour la selection de l'ID client
 @app.route("/load_data", methods=["GET"])
-def load_data():
-    
+def load_data():    
     return id_client.to_json(orient='values')
 
 # Chargement d'informations générales
