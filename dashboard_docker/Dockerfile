@@ -8,8 +8,8 @@ FROM python_docker
 # Répertoire de travail
 WORKDIR /app
 
-COPY logo.png /app/
-COPY DASHBOARD.py /app/
+# COPY logo.png /app/
+# COPY DASHBOARD.py /app/
 
 EXPOSE 80
 

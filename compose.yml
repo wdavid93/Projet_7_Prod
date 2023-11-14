@@ -6,6 +6,8 @@ services:
     image: api_docker
     container_name: projet7api
     restart: unless-stopped
+    volumes:
+      - ./api_data:/app:rw
     networks:
       - projet7-net  # Utilise le réseau "projet7-net" pour la communication
 
@@ -14,6 +16,8 @@ services:
     image: dashboard_docker
     container_name: projet7dashboard
     restart: unless-stopped
+    volumes:
+      - ./dashboard_data:/app:rw
     environment:
       - STREAMLIT_SERVER_PORT=80
     networks:
