@@ -58,7 +58,7 @@ def main():
 
     # Utilisez le libellé pour prendre des décisions
     with tab1:
-        st.write("Vous avez sélectionné l'onglet Client.")
+        st.write("Vous avez sélectionné l'onglet Client - yep.")
         # st.text(f"Vous avez sélectionné l'onglet : {selected_tab.label}")
 
         # Initialisation de l'application
