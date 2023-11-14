@@ -9,11 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Install SSH Key
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{ secrets.WILLIAM_DAVID_KEY }}
+          ssh-host: ${{ secrets.SERVER }}
+          ssh-port: ${{ secrets.PORT }}
 
-    - name: Deploy to server
-      run: |
-        ssh william@${{ secrets.SERVER }} 'cd /home/william/Projet_7_Prod && git pull origin main'
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.WILLIAM_DAVID_KEY }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to server
+        run: ssh -p ${{ secrets.PORT }} william@${{ secrets.SERVER }} 'cd /home/william/Projet_7_Prod && git pull origin main'
