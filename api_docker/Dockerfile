@@ -8,10 +8,10 @@ FROM python_docker
 # Répertoire de travail
 WORKDIR /app
 
-COPY API.py /app/
-COPY xgb.json /app/
-COPY application_test.zip /app/
-COPY application_train.zip /app/
+# COPY API.py /app/
+# COPY xgb.json /app/
+# COPY application_test.zip /app/
+# COPY application_train.zip /app/
 
 # Déclaration des ports d'entrées à l'app depuis l'extérieur du container
 EXPOSE 5001
