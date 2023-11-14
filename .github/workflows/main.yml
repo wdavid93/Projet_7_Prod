@@ -14,6 +14,6 @@ jobs:
 
     - name: Deploy to server
       run: |
-        ssh william@https://p7.wdavid.chevaliers.oublies.fr 'cd /home/william/Projet_7_Prod && git pull origin main'
+        ssh william@${{ secrets.SERVER }} 'cd /home/william/Projet_7_Prod && git pull origin main'
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.william_david_key }}
+        SSH_PRIVATE_KEY: ${{ secrets.WILLIAM_DAVID_KEY }}
