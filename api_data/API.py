@@ -42,13 +42,13 @@ app = Flask(__name__)
 # On charge les données
 # print("Lecture des Fichiers Zip")
 
-# data_train = pd.read_csv("application_train.zip")
-# data_test = pd.read_csv("application_test.zip")
+data_train = pd.read_csv("application_train.zip")
+data_test = pd.read_csv("application_test.zip")
 
 # data_train = pd.read_csv("C:\\Users\\Zbook\\OpenClassRoom\\Projet_7_Prod\\api_docker\\app_train.csv")
 # data_test = pd.read_csv("C:\\Users\\Zbook\\OpenClassRoom\\Projet_7_Prod\\api_docker\\app_test.csv")
-data_train = pd.read_csv("app_train.csv")
-data_test = pd.read_csv("app_test.csv")
+# data_train = pd.read_csv("app_train.csv")
+# data_test = pd.read_csv("app_test.csv")
 # print(data_test.shape)
 # On crée deux variables en attente qui deviendront
 # des variables globales après l'initialisation de l'API.
