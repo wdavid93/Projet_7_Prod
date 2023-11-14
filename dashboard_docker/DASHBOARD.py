@@ -21,10 +21,12 @@ import streamlit.components.v1 as components
 
 # Définition de l'URL de l'API
 # URL_API = "http://localhost:5001/"  # Utilisation en local
-URL_API = "http://projet7api:5001/"  # Utilisation en production
+URL_API = "http://projet7API:5001/"  # Utilisation en production
+# URL_API = "https://projet7api.streamlit.app/"
 
 
 def main():
+
     # # Code HTML pour un bouton de zoom
     # zoom_button = """
     # <button onclick="zoomIn()">Zoom In</button>
@@ -54,14 +56,11 @@ def main():
     # Affichez le nom de l'onglet sélectionné
 
     # Créez les onglets
-    # tab1, tab2, tab3 = st.tabs(["Client", "Shap", "Clients"])
-    tab1, tab2, tab3 = st.tabs(["<span style='font-size: 32px;'>Client</span>",
-                            "<span style='font-size: 32px;'>Shap</span>",
-                            "<span style='font-size: 32px;'>Clients</span>"])
+    tab1, tab2, tab3 = st.tabs(["Client", "Shap", "Clients"])
 
     # Utilisez le libellé pour prendre des décisions
     with tab1:
-        st.write("Vous avez sélectionné l'onglet Client - push Ok.")
+        st.write("Vous avez sélectionné l'onglet Client.")
         # st.text(f"Vous avez sélectionné l'onglet : {selected_tab.label}")
 
         # Initialisation de l'application
