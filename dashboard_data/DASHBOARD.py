@@ -25,9 +25,6 @@ URL_API = "http://projet7api:5001/"  # Utilisation en production
 
 
 def main():
-    %pip install plotly
-
-
     # # Code HTML pour un bouton de zoom
     # zoom_button = """
     # <button onclick="zoomIn()">Zoom In</button>
