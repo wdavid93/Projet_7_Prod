@@ -54,10 +54,10 @@ def main():
     # Affichez le nom de l'onglet sélectionné
 
     # Créez les onglets
-    # tab1, tab2, tab3 = st.tabs(["Client", "Shap", "Clients"])
-    tab1, tab2, tab3 = st.tabs(["<span style='font-size: 32px;'>Client</span>",
-                            "<span style='font-size: 32px;'>Shap</span>",
-                            "<span style='font-size: 32px;'>Clients</span>"])
+    tab1, tab2, tab3 = st.tabs(["Client", "Shap", "Clients"])
+    # tab1, tab2, tab3 = st.tabs(["<span style='font-size: 32px;'>Client</span>",
+    #                         "<span style='font-size: 32px;'>Shap</span>",
+    #                         "<span style='font-size: 32px;'>Clients</span>"])
 
     # Utilisez le libellé pour prendre des décisions
     with tab1:
