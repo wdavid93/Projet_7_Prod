@@ -23,7 +23,7 @@ def test_missing_values_table():
 def test_transform_treshold():
     df = pd.DataFrame(np.array([[1, 5], [2, 10], [3, 50], [4, 100]]), columns=['a', 'b'])
     new_df = cleanup.transform_treshold(df, 50)
-    sample = pd.DataFrame(np.array([[0, 0], [0, 0], [0, 1], [0, 0]]), columns=['a', 'b'])
+    sample = pd.DataFrame(np.array([[0, 0], [0, 0], [0, 1], [0, 1]]), columns=['a', 'b'])
 
     tm.assert_series_equal(new_df['a'], sample['a'])
     tm.assert_series_equal(new_df['b'], sample['b'])
