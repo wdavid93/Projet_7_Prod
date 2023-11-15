@@ -56,9 +56,20 @@ def main():
     # Affichez le nom de l'onglet sélectionné
 
     # Créez les onglets
-    tab1, tab2, tab3 = st.tabs(["Client", "Shap", "Clients"])
+    tab1, tab2, tab3 = st.tabs(["🗃 Client  ", "📈 Shap  ", "📈 Clients  "])
+    # tab1, tab2, tab3 = st.tabs(["<span style='font-size: 32px;'>Client</span>",
+    #                         "<span style='font-size: 32px;'>Shap</span>",
+    #                         "<span style='font-size: 32px;'>Clients</span>"])
+    css = '''
+    <style>
+        .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+        font-size:2.5rem;
+        }
+    </style>
+    '''
 
-    # Utilisez le libellé pour prendre des décisions
+    st.markdown(css, unsafe_allow_html=True)
+        # Utilisez le libellé pour prendre des décisions
     with tab1:
         st.write("Vous avez sélectionné l'onglet Client.")
         # st.text(f"Vous avez sélectionné l'onglet : {selected_tab.label}")
@@ -326,7 +337,6 @@ def load_logo():
     return logo
 
 # Fonction pour charger la liste des ID clients
-
 
 @st.cache_data
 def load_selectbox():

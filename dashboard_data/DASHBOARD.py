@@ -54,10 +54,19 @@ def main():
     # Affichez le nom de l'onglet sélectionné
 
     # Créez les onglets
-    tab1, tab2, tab3 = st.tabs(["Client", "Shap", "Clients"])
+    tab1, tab2, tab3 = st.tabs(["🗃 Client  ", "📈 Shap  ", "📈 Clients  "])
     # tab1, tab2, tab3 = st.tabs(["<span style='font-size: 32px;'>Client</span>",
     #                         "<span style='font-size: 32px;'>Shap</span>",
     #                         "<span style='font-size: 32px;'>Clients</span>"])
+    css = '''
+    <style>
+        .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+        font-size:2.5rem;
+        }
+    </style>
+    '''
+
+    st.markdown(css, unsafe_allow_html=True)
 
     # Utilisez le libellé pour prendre des décisions
     with tab1:
