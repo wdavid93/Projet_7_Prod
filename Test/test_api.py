@@ -1,4 +1,4 @@
-# # test_api.py
+# # test integration
 import requests
 
 # Fonction de test pour la route infos_gen
